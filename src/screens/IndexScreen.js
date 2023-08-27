@@ -27,6 +27,16 @@ const IndexScreen = ({ navigation }) => {
       }}
     />
   </View>
+};
+
+IndexScreen.navigationOptions = ({ navigation }) => {
+  return {
+    headerRight: () => (
+      <TouchableOpacity onPress={() => navigation.navigate('Create')}>
+        <Feather name="plus" size={30} style={styles.addPlus} />
+      </TouchableOpacity>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
@@ -43,6 +53,9 @@ const styles = StyleSheet.create({
   },
   icon: {
     fontSize: 24
+  },
+  addPlus: {
+    paddingRight: 10
   }
 });
 
